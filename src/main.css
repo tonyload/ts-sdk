@@ -1,0 +1,19 @@
+
+.fullscreen {
+    background: url('./icon/fullscreen.svg') no-repeat;
+  }
+
+.close{
+    background: url('./icon/close.svg') no-repeat;
+}
+
+.pause{
+    background: url('./icon/pause.svg') no-repeat;
+}
+.play{
+    background: url('./icon/play.svg') no-repeat;
+    background-size: cover;
+}
+.voice{
+    background: url('./icon/voice.svg') no-repeat;
+}
