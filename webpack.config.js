@@ -18,14 +18,14 @@ module.exports ={
     module:{
         rules:[
             {
-                test:/\.css$/,
-                use:['style-loader','css-loader'],
+                test:/\.scss$/,
+                use:['style-loader','css-loader','sass-loader'],
                 exclude:[
                     path.resolve(__dirname,'src/components')
                 ]
             },
             {
-                test:/\.css$/,
+                test:/\.scss$/,
                 use:['style-loader',{
                     loader:'css-loader',
                     options:{
@@ -34,7 +34,7 @@ module.exports ={
                         },
                        
                     }
-                }],
+                },'sass-loader'],
                 include:[
                     path.resolve(__dirname,'src/components')
                 ]

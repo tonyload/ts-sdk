@@ -1,6 +1,5 @@
-import './popup.css' //全局CSS 操作
-// let styles = require('./popup.css')
-import styles from './popup.css'
+import './popup.scss' //全局CSS 操作
+let styles = require('./popup.scss')
 
 interface Ipopup {
     width?:string,

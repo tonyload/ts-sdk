@@ -1,4 +1,4 @@
-import './main.css'
+import './main.scss'
 import popup from  './components/popup/popup'
 
 console.log("hello worlD1")
