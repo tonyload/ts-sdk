@@ -11,6 +11,7 @@ module.exports ={
     mode:"development",
     devServer:{
         contentBase:"/dist",
+        https: true, // 加入这句即可
     },
     resolve:{
         "extensions":['.ts','.js','.json']
@@ -45,9 +46,33 @@ module.exports ={
             },
             {
                 test:/\.ts$/,
-                use:['ts-loader'],
-                exclude:/node_modules/
+                use:[
+                   //配置babel
+                    {       
+                        loader:'babel-loader',//配置加载器
+                        options:{
+                            //设置预定义的环境 
+                            presets:[
+                                [
+                                    //指定环境的插件
+                                    "@babel/preset-env",
+                                    //配置信息 
+                                    {
+                                        //我们要兼容的目标浏览器 
+                                        targets:{
+                                            'chrome':"86",
+                                        },
+                                        //指定corejs 的版本
+                                        'corejs':'3',
+                                        //使用corejs的方式
+                                        'useBuiltIns':"entry"
+                                    }
+                                ]
+                            ]
+                        }
 
+                    },'ts-loader'],
+                exclude:/node_modules/
             }
         ]
     },
